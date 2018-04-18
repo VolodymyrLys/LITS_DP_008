@@ -23,7 +23,6 @@ while True:
                         print('Зробіть вибір, натиснувши р або s')
             else:
                 print('Не правильний ввід, введіть c або t або o')
-            break
         break
     elif choose == 'n' or choose == 'N':
         print('Значить дієта, будемо голодні')
