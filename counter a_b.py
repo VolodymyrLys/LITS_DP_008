@@ -1,6 +1,6 @@
 def counter(a, b):
     a_str = list(str(a))
-    b_str = list(str(b))
+    b_str = list(set(str(b)))
     count = 0
     for i in b_str:
         if i in a_str:
