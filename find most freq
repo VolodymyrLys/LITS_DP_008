@@ -1,0 +1,40 @@
+import re
+from collections import Counter
+
+
+def find_most_frequent1(text):              # всі малі букви
+    text = text.lower()                     # створюю список із фільтрованих слів
+    words = re.findall(r'\w+', text)
+    dict = {}                               # створюю пустий словник
+    s = ''                                  # створюю пусту строку
+    for i in words:                         # шарусь по списку слів
+        s += i                              # тимчасово поміщаю слово у строку
+        dict[s] = dict.setdefault(s, 0) + 1 # забиваю словник по ключах (words) з к-тюїх використання
+        s =''                               # обнулю тимчасову строку
+    m = max(dict.values())
+    #print('type a ', type(dict))
+    #print(dict)
+    dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)
+    #print(dict[k])
+    #a = sorted(a)
+    #print ('dict = ', dict)
+    #print ('max value = ', m)
+    #print ('max= ', max(dict))
+    #print('type dict ', type(dict))
+
+    return dict
+
+
+def find_most_frequent(text):
+
+#https://stackoverflow.com/questions/10390989/python-program-that-finds-most-frequent-word-in-a-txt-file-must-print-word-and/10398709#10398709
+
+    text = text.lower()
+    words = re.findall(r'\w+', text)
+    print(words)
+    word_counts = Counter(words)
+    return (word_counts)
+
+txt = 'Wow! Is this true? Really!?!? This is crazy! crazy-crazy'
+
+print(find_most_frequent1(txt))
