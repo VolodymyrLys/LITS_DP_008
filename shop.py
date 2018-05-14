@@ -6,13 +6,10 @@ class Shop(object):
 
         print (shop_name + '\n' +  store_type)
 
-    def describe_shop(self, desc1='', desc2=''):
-        self.desc1 = desc1
-        self.desc2 = desc2
-        long_name = str(self.desc1) + ' ' + self.desc2
+    def describe_shop(self):
+        long_name = str(self.shop_name) + ' ' + self.store_type
         return long_name
-        #print( desc1 + '\n' + desc2)
-
+        
     def open_shop(self):
         print ('Shop is open now')
 
@@ -38,7 +35,7 @@ shop_name і store_type. Створіть метод describe_shop(), який �
 Виведіть два атрибути окремо, потім викличте обидва методи."""
 
 store = Shop()
-print(store.describe_shop('Food', 'fruit and vegetables'))
+print(store.describe_shop())
 store.open_shop()
 
 
@@ -46,11 +43,11 @@ store.open_shop()
 """Створіть три різних екземпляри класу, викличте для кожного екземпляру метод describe_shop()"""
 
 shop_model = Shop('Model shop', 'For hobism')
-print(shop_model.describe_shop('here u can found scale models', 'U choose scale H0'))
+print(shop_model.describe_shop())
 shop_tools = Shop('Shop Tools and Fools', 'this tools u can use everyday and anywhere')
-print(shop_tools.describe_shop('A very big store for fools', 'if u dono know what to buy - buy a smart concrete. Smart choise ;)'))
+print(shop_tools.describe_shop())
 shop_pc = Shop('Hardware store for PC', 'Anything for minning is here')
-print(shop_pc.describe_shop('for overclocking click here', 'buy anything to burn ur PC\'s'))
+print(shop_pc.describe_shop())
 
 
 
